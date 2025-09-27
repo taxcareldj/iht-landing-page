@@ -105,24 +105,25 @@
           </div>
           <div class="small" style="margin-bottom:12px">Promo hari ini — dapatkan bonus eksklusif jika mendaftar sekarang</div>
 
-          <form id="regForm" onsubmit="return handleSubmit(event)">
-            <label>Nama Lengkap</label>
-            <input type="text" id="name" required placeholder="Isi nama lengkap">
-            <label>Email</label>
-            <input type="email" id="email" required placeholder="contoh@domain.com">
-            <label>No. WhatsApp</label>
-            <input type="tel" id="wa" placeholder="0812xxxx">
-
-            <label>Metode Pembayaran</label>
-            <select id="payMethod">
-              <option value="transfer">Bank Transfer</option>
-              <option value="va">Virtual Account</option>
-              <option value="gopay">Gopay / QRIS</option>
-            </select>
-
-            <button class="cta" type="submit">Daftar & Ambil BONUS — Rp299.000</button>
-            <p class="small" style="margin-top:10px">Setelah mendaftar, Anda akan mendapatkan instruksi pembayaran dan akses ke grup WA.</p>
-          </form>
+          <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5nCtVQYSXC2F219j0-66SCBFd3w_-XUKF4Tzsx1NXZqXvbg/formResponse" target="_self method="POST" target="_self">
+		  <div class="field">
+			<input type="text" name="entry.1111111111" placeholder="Nama lengkap" required>
+		  </div>
+		  <div class="field">
+			<input type="email" name="entry.2222222222" placeholder="Email" required>
+		  </div>
+		  <div class="field">
+			<input type="tel" name="entry.3333333333" placeholder="No. WhatsApp">
+		  </div>
+		  <div class="field">
+			<select name="entry.4444444444" required>
+			  <option value="Transfer Bank">Transfer Bank</option>
+			  <option value="OVO">OVO</option>
+			  <option value="QRIS">QRIS</option>
+			</select>
+		  </div>
+		  <button type="submit" class="cta">Daftar Sekarang</button>
+		</form>
 
           <div style="margin-top:14px">
             <strong>Yang didapat :</strong>
