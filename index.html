@@ -2,189 +2,155 @@
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TaxCare Indonesia</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Webinar - Sukses Menghadapi Pemeriksaan & Litigasi Pajak</title>
   <style>
-    :root{--accent:#0b69ff;--accent-2:#ff4d4f;--bg:#f7f8fb;--card:#fff;--muted:#6b7280}
+    :root{--accent:#d64545;--bg:#f7f7fb;--card:#fff;--muted:#666}
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#0b0b0b}
-    .container{max-width:1000px;margin:28px auto;padding:20px}
-    .card{background:var(--card);border-radius:12px;box-shadow:0 8px 24px rgba(11,11,11,0.07);overflow:hidden}
-
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;padding:36px}
-    .eyebrow{font-weight:600;color:var(--accent);font-size:13px;margin-bottom:6px}
-    h1{margin:0 0 8px;font-size:26px;line-height:1.15}
-    p.lead{margin:0 0 16px;color:var(--muted)}
-    .bullets{display:grid;gap:8px;margin:14px 0}
-    .bullet{display:flex;gap:10px;align-items:flex-start}
-    .bullet span{font-weight:700;color:var(--accent)}
-
-    /* SIDEBAR / FORM */
-    .sidebar{background:linear-gradient(180deg,#ffffff,#fbfcff);padding:22px;border-radius:10px;border:1px solid rgba(11,11,11,0.04)}
-    .price-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-    .price-old{text-decoration:line-through;color:var(--muted)}
-    .price-new{font-size:22px;font-weight:800;color:var(--accent-2)}
-    .cta{display:block;text-align:center;background:var(--accent-2);color:#fff;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin-top:12px}
-    .small{font-size:13px;color:var(--muted)}
-
-    form input, form select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(11,11,11,0.08);margin-top:8px}
-    label{font-size:13px;color:var(--muted)}
-
-    /* sections */
-    .section{padding:28px;background:transparent}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+    .container{max-width:980px;margin:24px auto;padding:20px}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+    h1{margin:0 0 8px;font-size:22px}
+    p.lead{margin:0 0 12px;color:var(--muted)}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+    .pill{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid #eee;font-weight:600}
+    .price{font-size:20px;font-weight:700}
+    .price .old{text-decoration:line-through;color:var(--muted);font-weight:600;margin-right:8px}
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer;border:none}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .benefits ul{padding-left:18px;margin:8px 0}
     .speaker{display:flex;gap:12px;align-items:center}
-    .speaker img{width:84px;height:84px;border-radius:8px;object-fit:cover}
-
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .feature{background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(11,11,11,0.04)}
-
-    /* footer CTA */
-    .bottom-cta{display:flex;justify-content:space-between;align-items:center;padding:18px;border-top:1px dashed rgba(11,11,11,0.06)}
-
-    /* responsive */
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr;}
-      .grid-3{grid-template-columns:1fr;}
-      .features{grid-template-columns:1fr}
-    }
+    .speaker img{width:76px;height:76px;border-radius:8px;object-fit:cover}
+    form .field{margin-bottom:10px}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6ef}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    @media(min-width:880px){.hero{grid-template-columns:1fr 420px}.grid{grid-template-columns:1fr 360px}}
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="card">
-      <div class="hero">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <h1>Webinar: <span id="event-title">Sukses Menghadapi Pemeriksaan & Litigasi Pajak</span></h1>
+        <p class="lead">Training online aplikatif untuk praktisi Pajak, Finance, Accounting, dan Owner Bisnis — berisi studi kasus dan strategi praktis.</p>
+        <div class="meta">
+          <div class="pill">📅 <strong id="event-date">Senin, 6 Oktober 2025</strong></div>
+          <div class="pill">⏰ <strong id="event-time">09.00 - 12.00 WIB</strong></div>
+          <div class="pill">💻 Zoom</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+          <div class="price"><span class="old">Rp599.000</span> <span style="color:var(--accent)">Rp99.000</span></div>
+          <a href="#form" class="cta">Daftar Sekarang - Dapatkan BONUS</a>
+        </div>
+        <hr style="margin:16px 0;border:none;border-top:1px solid #f1f1f6">
+        <div class="benefits">
+          <h3>Apa yang akan Anda pelajari</h3>
+          <ul>
+            <li>Alur dan skema pemeriksaan pajak terbaru</li>
+            <li>Prosedur pengajuan keberatan di Kantor Wilayah</li>
+            <li>Strategi menghadapi banding dan litigasi</li>
+            <li>Studi kasus lengkap: pemeriksaan, keberatan, banding</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SIDEBAR / FORM -->
+      <aside class="card" id="signup">
+        <h3 style="margin-top:0">Daftar & Ambil BONUS</h3>
+        <p class="small">Isi data dengan benar, kami akan kirim link Zoom dan bonus via email/WA.</p>
+
+        <!-- FORM terhubung ke Google Form -->
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSc5nCtVQYSXC2F219j0-66SCBFd3w_-XUKF4Tzsx1NXZqXvbg/formResponse" method="POST" target="_self">
+          <div class="field">
+            <input type="text" name="entry.1784560579" placeholder="Nama lengkap" required>
+          </div>
+          <div class="field">
+            <input type="email" name="entry.1388991053" placeholder="Email" required>
+          </div>
+          <div class="field">
+            <input type="tel" name="entry.2133312891" placeholder="No. WhatsApp (opsional)">
+          </div>
+          <div class="field">
+            <label class="small">Pilih Metode Pembayaran</label>
+            <select name="entry.836065219" required>
+              <option value="Transfer Bank">Transfer Bank</option>
+              <option value="OVO">OVO / e-wallet</option>
+              <option value="QRIS">QRIS</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button type="submit" class="cta" style="flex:1">Daftar Sekarang - Rp99.000</button>
+          </div>
+          <p class="small" style="margin-top:8px">Dengan mendaftar, Anda setuju menerima email & notifikasi terkait event.</p>
+        </form>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid #f1f1f6">
         <div>
-          <div class="eyebrow">TaxCare Indonesia</div>
-          <h1>Training Aplikatif: SPT Tahunan PPh Badan Coretax</h1>
-          <p class="lead">Training aplikatif untuk praktisi pajak, finance, accounting, dan owner bisnis.</p>
+          <strong>Bank Tujuan</strong>
+          <p class="small">Bank Syariah Indonesia<br>Rek: 123-456-789 a/n [Nama]</p>
+        </div>
+      </aside>
+    </section>
 
-          <div class="bullets">
-            <div class="bullet"><span>✔</span><div><strong>Kertas Kerja Rekonsiliasi dan Equalisasi</strong> & Pajak Ver 1</div></div>
-            <div class="bullet"><span>✔</span><div><strong>Kertas Kerja Rekonsiliasi dan Equalisasi</strong> & Pajak Ver 2</div></div>
-            <div class="bullet"><span>✔</span><div><strong>Template Laporan Keuangan Excel</strong>: berbagai sektor</div></div>
-            <div class="bullet"><span>✔</span><div><strong>Automasi Skema Impor XML</strong>: Penyusutan dan Amortisasi, dsb</div></div>
-            <div class="bullet"><span>✔</span><div><strong>WA Grup Diskusi Peserta Pelatihan</strong></div></div>
-            <div class="bullet"><span>✔</span><div><strong>Recording dan Materi Pelatihan</strong></div></div>
-          </div>
+    <!-- DETAILS -->
+    <section style="margin-top:20px" class="grid">
+      <div>
+        <div class="card">
+          <h3>Kenapa ikut webinar ini?</h3>
+          <p class="small">Training singkat tapi mendalam, fokus pada praktik dan studi kasus nyata. Cocok untuk profesional yang membutuhkan solusi cepat saat berhadapan dengan pemeriksaan pajak.</p>
+          <h4 style="margin-top:12px">Yang Anda Dapatkan</h4>
+          <ul>
+            <li>Softfile materi PDF</li>
+            <li>Akses rekaman</li>
+            <li>WA Grup diskusi</li>
+            <li>E-Certificate</li>
+            <li>Bonus: Tax Clinic 1-on-1 (jika daftar hari ini)</li>
+          </ul>
+        </div>
 
-          <section class="section">
-            <h3>Informasi Event</h3>
-            <p class="small">Hari, Tanggal: <strong>Senin, 22 November 2025</strong><br>Waktu: <strong>09.00 - 16.00 WIB</strong><br>Tempat: <strong>Hotel Sofyan Jl. DR Soepomo SH, Tebet, Jakarta</strong></p>
-          </section>
-
-          <section class="section">
-            <h3>Materi yang Dipelajari</h3>
-            <ul class="small">
-              <li>Excel Profesional Untuk Perpajakan</li>
-              <li>Kertas Kerja Rekonsiliasi dan Equalisasi</li>
-              <li>Laporan Keuangan</li>
-              <li>Studi kasus : Pengisian SPT Tahunan PPh Badan via Coretax</li>
-            </ul>
-          </section>
-
-          <section class="section">
-            <h3>Pembicara</h3>
-            <div class="speaker">
-              <img src="https://placehold.co/200x200/png?text=Foto+Pembicara" alt="Pembicara">
-              <div>
-                <strong>Dedi Sugianto, S.E.,M.M., CHRA</strong>
-                <div class="small">Konsultan pajak (Eks DJP) — berpengalaman 20+ tahun</div>
-              </div>
+        <div class="card" style="margin-top:14px">
+          <h3>Pembicara</h3>
+          <div class="speaker">
+            <img src="https://via.placeholder.com/150" alt="Pembicara">
+            <div>
+              <strong>Cosmas Budiyantoro, S.E, S.H, M.A. (Tax)</strong>
+              <p class="small">Konsultan pajak tersertifikasi & kuasa hukum di Pengadilan Pajak, berpengalaman 20+ tahun.</p>
             </div>
-          </section>
-
-        </div>
-
-        <aside class="sidebar">
-          <div style="text-align:center;margin-bottom:8px"><strong>Harga Normal</strong></div>
-          <div class="price-row">
-            <div class="price-old">Rp999.000</div>
-            <div class="price-new">Rp299.000</div>
           </div>
-          <div class="small" style="margin-bottom:12px">Promo hari ini — dapatkan bonus eksklusif jika mendaftar sekarang</div>
+        </div>
 
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc5nCtVQYSXC2F219j0-66SCBFd3w_-XUKF4Tzsx1NXZqXvbg/formResponse" target="_self" method="POST" id="mG61Hd" jsmodel="TOfxwf Q91hve CEkLOc" data-shuffle-seed="-7335963292563606325" data-clean-viewform-url="https://docs.google.com/forms/d/e/1FAIpQLSc5nCtVQYSXC2F219j0-66SCBFd3w_-XUKF4Tzsx1NXZqXvbg/viewform" data-response="%.@.]" data-dlp-data="%.@.null,false]" data-first-entry="0" data-last-entry="4" data-is-first-page="true">
-		  <div class="field">
-			<input type="text" name="entry.1111111111" placeholder="Nama lengkap" required>
-		  </div>
-		  <div class="field">
-			<input type="email" name="entry.2222222222" placeholder="Email" required>
-		  </div>
-		  <div class="field">
-			<input type="tel" name="entry.3333333333" placeholder="No. WhatsApp">
-		  </div>
-		  <div class="field">
-			<select name="entry.4444444444" required>
-			  <option value="Transfer Bank">Transfer Bank</option>
-			  <option value="OVO">OVO</option>
-			  <option value="QRIS">QRIS</option>
-			</select>
-		  </div>
-		  <button type="submit" class="cta">Daftar Sekarang</button>
-		</form>
-
-          <div style="margin-top:14px">
-            <strong>Yang didapat :</strong>
-            <ul class="small">
-              <li>Softfile materi PDF</li>
-              <li>Akses rekaman</li>
-              <li>WA Grup & E-Certificate</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-
-      <div class="section">
-        <h3>Testimoni & Bukti Training Sebelumnya</h3>
-        <div class="grid-3">
-          <div class="card feature">Screenshot acara sebelumnya / testimonial 1</div>
-          <div class="card feature">Screenshot acara sebelumnya / testimonial 2</div>
-          <div class="card feature">Screenshot acara sebelumnya / testimonial 3</div>
+        <div class="card" style="margin-top:14px">
+          <h3>Testimoni</h3>
+          <p class="small">"Materinya langsung aplikatif — membantu saya dalam menghadapi pemeriksaan pajak." — <em>Peserta 2025</em></p>
         </div>
       </div>
 
-      <div class="section">
-        <h3>Bonus Jika Daftar Hari Ini</h3>
-        <div class="features">
-          <div class="feature"><strong>Tax Clinic 1-on-1</strong><div class="small">Diskusi privat via Zoom (senilai Rp5.000.000)</div></div>
-          <div class="feature"><strong>E-Course: Cara Mudah Isi SPT Tahunan Coretax</strong><div class="small">(senilai Rp1.000.000)</div></div>
+      <aside>
+        <div class="card">
+          <h4>Promo Terbatas</h4>
+          <p class="price"><span class="old">Rp599.000</span> <span style="color:var(--accent)">Rp99.000</span></p>
+          <p class="small">Promo hanya berlaku hari ini — segera lakukan pendaftaran dan transfer.</p>
+          <a href="#form" class="cta" style="display:block;text-align:center">Amankan Kursi & BONUS</a>
         </div>
-      </div>
 
-      <div class="section">
-        <h3>Alur Pendaftaran & Pembayaran</h3>
-        <ol class="small">
-          <li>Isi form di samping</li>
-          <li>Terima instruksi pembayaran via email/WA</li>
-          <li>Lakukan pembayaran dan konfirmasi</li>
-          <li>Terima link Zoom + bonus setelah konfirmasi</li>
-        </ol>
-      </div>
+        <div class="card" style="margin-top:12px">
+          <h4>FAQ singkat</h4>
+          <p class="small"><strong>Apakah ada rekaman?</strong> Ya, peserta mendapat akses rekaman.</p>
+          <p class="small"><strong>Apakah ada sertifikat?</strong> Ya, semua peserta mendapat e-certificate.</p>
+        </div>
+      </aside>
+    </section>
 
-      <div class="bottom-cta">
-        <div style="padding:18px">Butuh bantuan? Chat via WhatsApp: <strong>082312353707</strong></div>
-        <a class="cta" href="#regForm" style="margin:12px">Daftar Sekarang — Rp299.000</a>
-      </div>
-
-    </div>
+    <footer>
+      <p>© <span id="year"></span> [Nama Organisasi]. Situs ini dilindungi reCAPTCHA dan kebijakan Google berlaku.</p>
+    </footer>
   </div>
 
   <script>
-    function handleSubmit(e){
-      e.preventDefault();
-      const name=document.getElementById('name').value.trim();
-      const email=document.getElementById('email').value.trim();
-      const wa=document.getElementById('wa').value.trim();
-      if(!name||!email){alert('Mohon lengkapi nama dan email.');return false}
-
-      // -- TEMPORARY: show success & instructions
-      alert('Terima kasih ' + name + '!\nSilakan cek email/WA untuk instruksi pembayaran. (Ini versi demo — hubungkan form ke backend atau Google Sheets)');
-
-      // TODO: replace with real integration: fetch() to your server, or submit to Google Forms / Zapier
-      return false;
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
