@@ -153,7 +153,7 @@
     // Ganti URL di bawah dengan URL Web App kamu
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwo2hyL-f5Rt6Kob8VFZyJyKeQDjLzuYEqHprc0OdTpgc3BTIdHN7fthONAuj3wj8_2/exec';
     
-    document.getElementById('regForm').addEventListener('submit', function(e) {
+    document.getElementById('regForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const form = e.target;
