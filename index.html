@@ -151,7 +151,7 @@
 
   <script>
     // Ganti URL di bawah dengan URL Web App kamu
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw0G4gdP8lKC1WrPjFsLANdS9UGtbjRaDU3S_p-ut_yfL1FBECoZog8I4dEcIWBl-z1/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwo2hyL-f5Rt6Kob8VFZyJyKeQDjLzuYEqHprc0OdTpgc3BTIdHN7fthONAuj3wj8_2/exec';
     
     document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -160,27 +160,29 @@
     const data = Object.fromEntries(new FormData(form).entries());
 
     
-    fetch(scriptURL, {
-      method: 'POST',
-      mode: 'cors', // Penting untuk CORS
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(result => {
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+      console.log('Response:', result);
+
       if (result.result === 'success') {
         alert('Pendaftaran berhasil! Data Anda tersimpan.');
         form.reset();
       } else {
         alert('Gagal: ' + (result.message || 'Unknown error'));
       }
-    })
-    .catch(err => {
-      console.error('Fetch error:', err);
-      alert('Terjadi kesalahan saat mengirim data.');
-    });
+    } catch (error) {
+      console.error('Fetch error:', error);
+      alert('Terjadi kesalahan saat mengirim data. Periksa console log.');
+    }
   });
 
   // Update tahun footer otomatis
