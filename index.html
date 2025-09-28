@@ -150,15 +150,16 @@
   </div>
 
   <script>
-  document.getElementById('regForm').addEventListener('submit', function(e) {
+    // Ganti URL di bawah dengan URL Web App kamu
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxN5W5yqc5vZDGl6eKi-3Kqj0Y_C9qju_P2XZssRMgqsmXtpnx9ocjpIbyw06ow5oSNCQ/exec';
+    
+    document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const form = e.target;
     const data = Object.fromEntries(new FormData(form).entries());
 
-    // Ganti URL di bawah dengan URL Web App kamu
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxN5W5yqc5vZDGl6eKi-3Kqj0Y_C9qju_P2XZssRMgqsmXtpnx9ocjpIbyw06ow5oSNCQ/exec';
-
+    
     fetch(scriptURL, {
       method: 'POST',
       mode: 'cors', // Penting untuk CORS
