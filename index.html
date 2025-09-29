@@ -151,7 +151,7 @@
 
   <script>
     // Ganti URL di bawah dengan URL Web App kamu
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzNEn1J0F1WLBus2gLn4Sy3URLXTD7MfyDK3o6jXXD29VQW2o6JsiMp8S48J51NdWNm/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxN5W5yqc5vZDGl6eKi-3Kqj0Y_C9qju_P2XZssRMgqsmXtpnx9ocjpIbyw06ow5oSNCQ/exec';
     
     document.getElementById('regForm').addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -160,30 +160,29 @@
     const data = Object.fromEntries(new FormData(form).entries());
 
     
-    try {
-      const response = await fetch(scriptURL, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
+    fetch(scriptURL, {
+  method: 'POST',
+  mode: 'cors', // WAJIB untuk cross-origin
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(result => {
+  console.log("Response:", result);
+  if (result.result === 'success') {
+    alert('Pendaftaran berhasil! Data Anda tersimpan.');
+    form.reset();
+  } else {
+    alert('Gagal: ' + (result.message || 'Unknown error'));
+  }
+})
+.catch(err => {
+  console.error('Fetch error:', err);
+  alert('Terjadi kesalahan saat mengirim data. Periksa console log.');
+});
 
-      const result = await response.json();
-      console.log('Response:', result);
-
-      if (result.result === 'success') {
-        alert('Pendaftaran berhasil! Data Anda tersimpan.');
-        form.reset();
-      } else {
-        alert('Gagal: ' + (result.message || 'Unknown error'));
-      }
-    } catch (error) {
-      console.error('Fetch error:', error);
-      alert('Terjadi kesalahan saat mengirim data. Periksa console log.');
-    }
-  });
 
   // Update tahun footer otomatis
   document.getElementById('year').textContent = new Date().getFullYear();
