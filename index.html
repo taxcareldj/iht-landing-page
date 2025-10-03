@@ -49,10 +49,10 @@
         <div class="benefits">
           <h3>Apa yang akan Anda pelajari</h3>
           <ul>
-            <li>Update peraturan terbaru : Update aturan pajak yang berkaitan dengan SPT Tahunan (baik WP Orang Pribadi maupun Badan)</li>
-            <li>Paket Komplit : Kertas Kerta Rekonsiliasi dan Equalisasi, Template Laporan Keuangan Excel, Automasi Skema Impor XML</li>
-            <li>Pembicara Berpengalaman: Dapatkan wawasan langsung dari pakar perpajakan dengan pengalaman lebih dari dua dekade (eks DJP)</li>
-            <li>Jaringan Profesional: Bertemu dan berdiskusi dengan rekan profesional dari berbagai industri</li>
+            <li>Update peraturan terbaru terkait SPT Tahunan (WP OP maupun Badan)</li>
+            <li>Paket Komplit: Rekonsiliasi, Template Laporan Keuangan, Automasi XML</li>
+            <li>Pembicara berpengalaman (eks DJP)</li>
+            <li>Jaringan profesional dari berbagai industri</li>
           </ul>
         </div>
       </div>
@@ -60,61 +60,35 @@
       <!-- SIDEBAR / FORM -->
       <aside class="card" id="signup">
         <h3 style="margin-top:0">Daftar & Ambil BONUS</h3>
-        <p class="small">Isi data dengan benar.</p>
+        <p class="small">Isi data dengan benar. Setelah submit Anda akan diarahkan ke halaman terima kasih.</p>
 
-        <form action="https://formspree.io/f/mldpnoen" method="POST">
-          <!-- wajib: gunakan full absolute URL https://... -->
+        <!-- FORM Formspree -->
+        <form id="form" action="https://formspree.io/f/mldpnoen" method="POST">
+          <!-- redirect setelah sukses -->
           <input type="hidden" name="_redirect" value="https://taxcareldj.github.io/thank-you.html">
-        
-          <input type="text" name="name" placeholder="Nama lengkap" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <input type="tel" name="phone" placeholder="WhatsApp">
-          <select name="payment" required>
-            <option>Transfer Bank</option>
-            <option>OVO</option>
-            <option>QRIS</option>
-          </select>
-          <button type="submit">Daftar</button>
+
+          <div class="field">
+            <input type="text" name="name" placeholder="Nama lengkap" required>
+          </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="field">
+            <input type="tel" name="phone" placeholder="No. WhatsApp (opsional)">
+          </div>
+          <div class="field">
+            <label class="small">Pilih Metode Pembayaran</label>
+            <select name="payment" required>
+              <option value="Transfer Bank">Transfer Bank</option>
+              <option value="OVO">OVO / e-wallet</option>
+              <option value="QRIS">QRIS</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button type="submit" class="cta" style="flex:1">Daftar Sekarang - Rp850.000</button>
+          </div>
+          <p class="small" style="margin-top:8px">Dengan mendaftar, Anda setuju menerima email & notifikasi terkait event.</p>
         </form>
-
-        
-        <script>
-        document.getElementById('regForm').addEventListener('submit', async function(e){
-          e.preventDefault(); // kita pakai AJAX
-        
-          const form = e.target;
-          const action = form.action;
-          const formData = new FormData(form);
-        
-          try {
-            const resp = await fetch(action, {
-              method: 'POST',
-              body: formData,
-              headers: { 'Accept': 'application/json' } // minta JSON balasan dari Formspree
-            });
-        
-            if (resp.ok) {
-              // Jika kamu pakai _redirect value, bisa ambil dari input
-              const redirect = form.querySelector('input[name="_redirect"]')?.value;
-              if (redirect) {
-                window.location.href = redirect;
-              } else {
-                // fallback: tampil pesan
-                alert('Pendaftaran berhasil — terima kasih!');
-                form.reset();
-              }
-            } else {
-              const err = await resp.json().catch(()=>({}));
-              alert('Gagal submit: ' + (err.message || resp.statusText));
-            }
-          } catch (err) {
-            console.error('Fetch error:', err);
-            alert('Terjadi kesalahan saat mengirim data. Periksa koneksi atau console.');
-          }
-        });
-        </script>
-
-
 
         <hr style="margin:12px 0;border:none;border-top:1px solid #f1f1f6">
         <div>
@@ -129,7 +103,7 @@
       <div>
         <div class="card">
           <h3>Kenapa ikut Pelatihan SPT Tahunan Coretax ini?</h3>
-          <p class="small">Training singkat tapi mendalam, fokus pada praktik dan studi kasus nyata. Cocok untuk profesional yang membutuhkan solusi cepat saat melaksanakan kewajiban pelaporan SPT Tahunan sesuai dengan regulasi terbaru dan mekanisme Coretax DJP.</p>
+          <p class="small">Training singkat tapi mendalam, fokus praktik & studi kasus nyata. Cocok untuk profesional yang ingin memastikan kewajiban pelaporan sesuai regulasi terbaru.</p>
           <h4 style="margin-top:12px">Yang Anda Dapatkan</h4>
           <ul>
             <li>Softfile materi PDF</li>
@@ -153,7 +127,7 @@
 
         <div class="card" style="margin-top:14px">
           <h3>Testimoni</h3>
-          <p class="small">"Materinya langsung aplikatif — membantu saya dalam menghadapi pemeriksaan pajak." — <em>Peserta 2025</em></p>
+          <p class="small">"Materinya langsung aplikatif — membantu saya menghadapi pelaporan SPT Tahunan." — <em>Peserta 2025</em></p>
         </div>
       </div>
 
@@ -161,7 +135,7 @@
         <div class="card">
           <h4>Promo Terbatas</h4>
           <p class="price"><span class="old">Rp1.000.000</span> <span style="color:var(--accent)">Rp850.000</span></p>
-          <p class="small">Promo hanya berlaku hari ini — segera lakukan pendaftaran dan transfer.</p>
+          <p class="small">Promo hanya berlaku hari ini — segera daftar dan transfer.</p>
           <a href="#form" class="cta" style="display:block;text-align:center">Amankan Kursi & BONUS</a>
         </div>
 
@@ -182,6 +156,5 @@
     // Update tahun footer otomatis
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
