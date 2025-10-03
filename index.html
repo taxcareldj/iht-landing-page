@@ -62,11 +62,21 @@
         <h3 style="margin-top:0">Daftar & Ambil BONUS</h3>
         <p class="small">Isi data dengan benar.</p>
 
-        <!-- FORM terhubung ke Formspree -->
-        <form id="regForm" action="https://formspree.io/f/mldpnoen" method="POST">
+        <form action="https://formspree.io/f/PASTE_ID" method="POST">
+          <!-- wajib: gunakan full absolute URL https://... -->
           <input type="hidden" name="_redirect" value="https://taxcareldj.github.io/thank-you.html">
-          <!-- fields... -->
+        
+          <input type="text" name="name" placeholder="Nama lengkap" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="tel" name="phone" placeholder="WhatsApp">
+          <select name="payment" required>
+            <option>Transfer Bank</option>
+            <option>OVO</option>
+            <option>QRIS</option>
+          </select>
+          <button type="submit">Daftar</button>
         </form>
+
         
         <script>
         document.getElementById('regForm').addEventListener('submit', async function(e){
