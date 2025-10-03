@@ -5,29 +5,47 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bimtek Perpajakan: Panduan Lengkap Lapor SPT Tahunan Coretax Tanpa Risiko Sanksi</title>
   <style>
-    :root{--accent:#d64545;--bg:#f7f7fb;--card:#fff;--muted:#666}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
-    .container{max-width:980px;margin:24px auto;padding:20px}
-    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
-    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
-    h1{margin:0 0 8px;font-size:22px}
-    p.lead{margin:0 0 12px;color:var(--muted)}
-    .meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
-    .pill{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid #eee;font-weight:600}
-    .price{font-size:20px;font-weight:700}
-    .price .old{text-decoration:line-through;color:var(--muted);font-weight:600;margin-right:8px}
-    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer;border:none}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
-    .benefits ul{padding-left:18px;margin:8px 0}
-    .speaker{display:flex;gap:12px;align-items:center}
-    .speaker img{width:76px;height:76px;border-radius:8px;object-fit:cover}
-    form .field{margin-bottom:10px}
-    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6ef}
-    .small{font-size:13px;color:var(--muted)}
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    @media(min-width:880px){.hero{grid-template-columns:1fr 420px}.grid{grid-template-columns:1fr 360px}}
+    body {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      color: #111;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      /* fallback halus */
+    }
+  
+    /* Tambahan efek "blob abstrak" */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -100px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at center, rgba(214,69,69,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(80px);
+    }
+  
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -120px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at center, rgba(100,149,237,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(90px);
+    }
+  
+    .card {
+      background: rgba(255, 255, 255, 0.9); /* transparan dikit biar nyatu */
+      backdrop-filter: blur(10px);
+    }
   </style>
+
 </head>
 <body>
   <div class="container">
