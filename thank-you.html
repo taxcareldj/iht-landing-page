@@ -5,26 +5,70 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Terima Kasih - Pendaftaran Berhasil</title>
   <style>
+    :root {
+      --accent:#d64545;
+      --wa:#25D366;
+      --bg:#f7f7fb;
+    }
+    *{box-sizing:border-box}
     body {
       font-family: Inter, system-ui, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f7f7fb, #eaeaf7);
       color: #111;
       text-align: center;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
     }
+
+    /* --- background blob abstrak --- */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -100px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at center, rgba(214,69,69,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(80px);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      bottom: -120px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at center, rgba(100,149,237,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      filter: blur(90px);
+    }
+
     .container {
       max-width: 600px;
-      margin: 60px auto;
-      background: #fff;
-      padding: 30px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      padding: 30px 20px;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
+    .logo {
+      max-width: 120px;
+      margin: 0 auto 20px;
+    }
+    .logo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px; /* opsional, bisa dibuang jika logonya square */
+    }
     h1 {
-      font-size: 24px;
+      font-size: clamp(22px, 5vw, 28px);
       margin-bottom: 12px;
       color: #2b2b2b;
+      line-height: 1.4;
     }
     p {
       font-size: 15px;
@@ -33,7 +77,7 @@
     }
     .cta {
       display: inline-block;
-      background: #25D366; /* warna WA */
+      background: var(--wa);
       color: #fff;
       padding: 14px 20px;
       border-radius: 10px;
@@ -42,6 +86,7 @@
       font-size: 16px;
       box-shadow: 0 4px 10px rgba(37,211,102,0.3);
       transition: background 0.3s ease;
+      min-height: 44px;
     }
     .cta:hover {
       background: #1ebe5d;
@@ -54,16 +99,29 @@
       margin: 20px 0;
       font-size: 14px;
       color: #444;
+      line-height: 1.5;
     }
     footer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 12px;
       color: #888;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media(max-width:600px){
+      .container{margin:20px;padding:20px}
+      .bank-info{font-size:13px}
+      .cta{width:100%;display:block;padding:16px}
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="logo.png" alt="Logo Bisnis">
+    </div>
+
     <h1>✅ Terima Kasih!</h1>
     <p>Pendaftaran Anda telah berhasil. Silakan lakukan pembayaran sesuai instruksi berikut:</p>
 
