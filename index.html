@@ -62,7 +62,7 @@
         <h3 style="margin-top:0">Daftar & Ambil BONUS</h3>
         <p class="small">Isi data dengan benar.</p>
 
-        <!-- FORM terhubung ke Google Form -->
+        <!-- FORM terhubung ke Formspree -->
         <form action="https://formspree.io/f/mldpnoen" method="POST">
           <div class="field">
             <input type="text" name="name" placeholder="Nama lengkap" required>
@@ -81,9 +81,11 @@
               <option value="QRIS">QRIS</option>
             </select>
           </div>
-          <button type="submit" class="cta">Daftar Sekarang</button>
+          <div style="display:flex;gap:8px">
+            <button type="submit" class="cta" style="flex:1">Daftar Sekarang - Rp850.000</button>
+          </div>
+          <p class="small" style="margin-top:8px">Dengan mendaftar, Anda setuju menerima email & notifikasi terkait event.</p>
         </form>
-
 
         <hr style="margin:12px 0;border:none;border-top:1px solid #f1f1f6">
         <div>
@@ -114,7 +116,7 @@
           <div class="speaker">
             <img src="https://via.placeholder.com/150" alt="Pembicara">
             <div>
-              <strong>Dedi Sugianto, S.E.,M.M.,CHRA)</strong>
+              <strong>Dedi Sugianto, S.E., M.M., CHRA</strong>
               <p class="small">Konsultan pajak tersertifikasi & kuasa hukum di Pengadilan Pajak, berpengalaman 20+ tahun.</p>
             </div>
           </div>
@@ -148,44 +150,9 @@
   </div>
 
   <script>
-  // Ganti URL di bawah dengan URL Web App Anda (pastikan versi terbaru dari deploy)
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxN5W5yqc5vZDGl6eKi-3Kqj0Y_C9qju_P2XZssRMgqsmXtpnx9ocjpIbyw06ow5oSNCQ/exec';
-  
-  document.getElementById('regForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const data = Object.fromEntries(new FormData(form).entries());
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(scriptURL, {
-        method: 'POST',
-        mode: 'cors', // Gunakan 'cors' karena kita sudah set header di Apps Script
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: formData
-      });
-
-      const result = await response.json();
-      console.log("Response:", result);
-
-      if (result.result === 'success') {
-        alert('Pendaftaran berhasil! Data Anda tersimpan di Google Sheets.');
-        form.reset();
-      } else {
-        throw new Error(result.message || 'Unknown error');
-      }
-    } catch (err) {
-      console.error('Fetch error:', err);
-      alert('Terjadi kesalahan saat mengirim data: ' + err.message + '. Cek koneksi atau hubungi admin.');
-    }
-
     // Update tahun footer otomatis
     document.getElementById('year').textContent = new Date().getFullYear();
-  });
-</script>
+  </script>
 
 </body>
 </html>
