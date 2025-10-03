@@ -63,10 +63,7 @@
         <p class="small">Isi data dengan benar. Setelah submit Anda akan diarahkan ke halaman terima kasih.</p>
 
         <!-- FORM Formspree -->
-        <form id="form" action="https://formspree.io/f/mldpnoen" method="POST">
-          <!-- redirect setelah sukses -->
-          <input type="hidden" name="_redirect" value="https://taxcareldj.github.io/thank-you.html">
-
+        <form id="form">
           <div class="field">
             <input type="text" name="name" placeholder="Nama lengkap" required>
           </div>
@@ -87,8 +84,34 @@
           <div style="display:flex;gap:8px">
             <button type="submit" class="cta" style="flex:1">Daftar Sekarang - Rp850.000</button>
           </div>
-          <p class="small" style="margin-top:8px">Dengan mendaftar, Anda setuju menerima email & notifikasi terkait event.</p>
         </form>
+        
+        <script>
+          const form = document.getElementById('form');
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+        
+            const data = new FormData(form);
+            const endpoint = "https://formspree.io/f/mldpnoen"; // Ganti dgn endpoint kamu
+        
+            try {
+              const res = await fetch(endpoint, {
+                method: "POST",
+                body: data,
+                headers: { 'Accept': 'application/json' }
+              });
+        
+              if (res.ok) {
+                window.location.href = "thank-you.html"; // redirect manual
+              } else {
+                alert("Terjadi masalah, coba lagi.");
+              }
+            } catch (err) {
+              alert("Error: " + err.message);
+            }
+          });
+        </script>
+
 
         <hr style="margin:12px 0;border:none;border-top:1px solid #f1f1f6">
         <div>
