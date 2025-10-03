@@ -1,28 +1,96 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Terima Kasih</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terima Kasih - Pendaftaran Berhasil</title>
   <style>
-    body{font-family:Inter,Arial,sans-serif;background:#f7f7fb;color:#111;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
-    .card{background:#fff;padding:40px;border-radius:12px;box-shadow:0 6px 20px rgba(16,24,40,0.06);text-align:center;max-width:500px}
-    h1{color:#d64545;margin-bottom:16px}
-    p{color:#555;margin-bottom:24px}
-    a{display:inline-block;padding:12px 20px;border-radius:10px;background:#d64545;color:#fff;text-decoration:none;font-weight:600}
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f7f7fb, #eaeaf7);
+      color: #111;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #2b2b2b;
+    }
+    p {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .cta {
+      display: inline-block;
+      background: #25D366; /* warna WA */
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(37,211,102,0.3);
+      transition: background 0.3s ease;
+    }
+    .cta:hover {
+      background: #1ebe5d;
+    }
+    .bank-info {
+      text-align: left;
+      background: #f9f9fc;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: #444;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #888;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Terima Kasih 🎉</h1>
-    <p>Pendaftaran Anda sudah terkirim. Kami akan segera menghubungi Anda melalui email/WhatsApp.</p>
-    <a href="index.html">Kembali ke Halaman Utama</a>
+  <div class="container">
+    <h1>✅ Terima Kasih!</h1>
+    <p>Pendaftaran Anda telah berhasil. Silakan lakukan pembayaran sesuai instruksi berikut:</p>
+
+    <div class="bank-info">
+      <strong>Bank Tujuan:</strong><br>
+      Bank Central Asia (BCA)<br>
+      Rekening: <strong>7300423421</strong><br>
+      Atas Nama: <strong>PT. Solusi Pendidikan Global</strong><br>
+      Jumlah: <strong>Rp 850.000</strong>
+    </div>
+
+    <p>Setelah transfer, silakan kirim bukti pembayaran melalui WhatsApp ke Admin dengan klik tombol di bawah:</p>
+
     <a class="cta" 
-       href="https://wa.me/08116330050?text=Halo%20Admin,%20saya%20sudah%20daftar%20Bimtek.%20Ini%20bukti%20pembayaran%20saya:"
+       href="https://wa.me/628116330050?text=Halo%20Admin,%20saya%20sudah%20daftar%20Bimtek%20dan%20melakukan%20pembayaran.%20Berikut%20bukti%20transfer%20saya:"
        target="_blank">
-       Upload Bukti Transfer via WhatsApp
+       📲 Upload Bukti Transfer via WhatsApp
     </a>
 
+    <footer>
+      <p>© <span id="year"></span> [Nama Organisasi]. Semua hak cipta dilindungi.</p>
+    </footer>
   </div>
+
+  <script>
+    // Update tahun otomatis
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
