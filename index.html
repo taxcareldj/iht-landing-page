@@ -84,34 +84,8 @@
           <div style="display:flex;gap:8px">
             <button type="submit" class="cta" style="flex:1">Daftar Sekarang - Rp850.000</button>
           </div>
+          <p class="small" style="margin-top:8px">Dengan mendaftar, Anda setuju menerima email & notifikasi terkait event.</p>
         </form>
-        
-        <script>
-          const form = document.getElementById('form');
-          form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-        
-            const data = new FormData(form);
-            const endpoint = "https://formspree.io/f/mldpnoen"; // Ganti dgn endpoint kamu
-        
-            try {
-              const res = await fetch(endpoint, {
-                method: "POST",
-                body: data,
-                headers: { 'Accept': 'application/json' }
-              });
-        
-              if (res.ok) {
-                window.location.href = "thank-you.html"; // redirect manual
-              } else {
-                alert("Terjadi masalah, coba lagi.");
-              }
-            } catch (err) {
-              alert("Error: " + err.message);
-            }
-          });
-        </script>
-
 
         <hr style="margin:12px 0;border:none;border-top:1px solid #f1f1f6">
         <div>
@@ -178,6 +152,30 @@
   <script>
     // Update tahun footer otomatis
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Submit ke Formspree + redirect manual (Free Plan)
+    const form = document.getElementById('form');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const endpoint = "https://formspree.io/f/mldpnoen"; // Ganti dgn endpoint Formspree kamu
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          window.location.href = "thank-you.html"; // redirect manual setelah sukses
+        } else {
+          alert("Terjadi masalah saat mengirim data.");
+        }
+      } catch (err) {
+        alert("Error: " + err.message);
+      }
+    });
   </script>
 </body>
 </html>
