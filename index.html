@@ -5,71 +5,88 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bimtek Perpajakan: Panduan Lengkap Lapor SPT Tahunan Coretax Tanpa Risiko Sanksi</title>
   <style>
-        :root{--accent:#d64545;--bg:#f7f7fb;--card:#fff;--muted:#666}
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+    :root {
+      --accent:#d64545;
+      --bg:#f7f7fb;
+      --card:#fff;
+      --muted:#666;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body {
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111;
+      line-height:1.6;
+    }
+    .bg-svg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
     .container{max-width:980px;margin:24px auto;padding:20px}
     .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
-    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 6px 20px rgba(16,24,40,0.06)
+    }
     h1{margin:0 0 8px;font-size:22px}
     p.lead{margin:0 0 12px;color:var(--muted)}
     .meta{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
     .pill{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid #eee;font-weight:600}
     .price{font-size:20px;font-weight:700}
     .price .old{text-decoration:line-through;color:var(--muted);font-weight:600;margin-right:8px}
-    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer;border:none}
+    .cta{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+      text-align:center;
+    }
     .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
     .benefits ul{padding-left:18px;margin:8px 0}
     .speaker{display:flex;gap:12px;align-items:center}
     .speaker img{width:76px;height:76px;border-radius:8px;object-fit:cover}
     form .field{margin-bottom:10px}
-    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6ef}
+    input,select,textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #e6e6ef
+    }
     .small{font-size:13px;color:var(--muted)}
     footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    @media(min-width:880px){.hero{grid-template-columns:1fr 420px}.grid{grid-template-columns:1fr 360px}}
-    body {
-      font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      color: #111;
-      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-      /* fallback halus */
-    }
-  
-    /* Tambahan efek "blob abstrak" */
-    body::before {
-      content: "";
-      position: fixed;
-      top: -100px;
-      left: -100px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle at center, rgba(214,69,69,0.25) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: -1;
-      filter: blur(80px);
-    }
-  
-    body::after {
-      content: "";
-      position: fixed;
-      bottom: -120px;
-      right: -100px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle at center, rgba(100,149,237,0.25) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: -1;
-      filter: blur(90px);
-    }
-  
-    .card {
-      background: rgba(255, 255, 255, 0.9); /* transparan dikit biar nyatu */
-      backdrop-filter: blur(10px);
+    @media(min-width:880px){
+      .hero{grid-template-columns:1fr 420px}
+      .grid{grid-template-columns:1fr 360px}
     }
   </style>
-
 </head>
 <body>
+  <!-- Background SVG -->
+  <div class="bg-svg">
+    <svg viewBox="0 0 1440 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:100%">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#f8d7da;stop-opacity:0.6"/>
+          <stop offset="100%" style="stop-color:#d64545;stop-opacity:0.3"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 C480,200 960,0 1440,120 L1440,800 L0,800Z" fill="url(#grad)"/>
+      <path d="M0,400 C600,600 800,200 1440,500 L1440,800 L0,800Z" fill="url(#grad)" opacity="0.5"/>
+    </svg>
+  </div>
+
   <div class="container">
     <!-- HERO -->
     <section class="hero">
@@ -90,7 +107,7 @@
           <h3>Apa yang akan Anda pelajari</h3>
           <ul>
             <li>Update peraturan terbaru terkait SPT Tahunan (WP OP maupun Badan)</li>
-            <li>Paket Komplit: Rekonsiliasi, Template Laporan Keuangan, Skema Impor File XML</li>
+            <li>Paket Komplit: Rekonsiliasi, Template Laporan Keuangan, Automasi XML</li>
             <li>Pembicara berpengalaman (eks DJP)</li>
             <li>Jaringan profesional dari berbagai industri</li>
           </ul>
@@ -103,7 +120,10 @@
         <p class="small">Isi data dengan benar. Setelah submit Anda akan diarahkan ke halaman terima kasih.</p>
 
         <!-- FORM Formspree -->
-        <form id="form">
+        <form id="form" action="https://formspree.io/f/YOUR_ID" method="POST">
+          <!-- redirect setelah sukses -->
+          <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
+
           <div class="field">
             <input type="text" name="name" placeholder="Nama lengkap" required>
           </div>
@@ -177,44 +197,20 @@
 
         <div class="card" style="margin-top:12px">
           <h4>FAQ singkat</h4>
-          <p class="small"><strong>Apakah mendapatkan materi?</strong> Ya, peserta mendapat file materi.</p>
+          <p class="small"><strong>Apakah file materi?</strong> Ya, peserta mendapat file materi.</p>
           <p class="small"><strong>Apakah ada sertifikat?</strong> Ya, semua peserta mendapat e-certificate.</p>
         </div>
       </aside>
     </section>
 
     <footer>
-      <p>© <span id="year"></span> PT Solusi Global Indonesia. Situs ini dilindungi reCAPTCHA dan kebijakan yang berlaku.</p>
+      <p>© <span id="year"></span> PT Solusi Global Indonesia. Situs ini dilindungi reCAPTCHA dan kebijakan berlaku.</p>
     </footer>
   </div>
 
   <script>
     // Update tahun footer otomatis
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Submit ke Formspree + redirect manual (Free Plan)
-    const form = document.getElementById('form');
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const endpoint = "https://formspree.io/f/mldpnoen"; // Ganti dgn endpoint Formspree kamu
-
-      try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          window.location.href = "thank-you.html"; // redirect manual setelah sukses
-        } else {
-          alert("Terjadi masalah saat mengirim data.");
-        }
-      } catch (err) {
-        alert("Error: " + err.message);
-      }
-    });
   </script>
 </body>
 </html>
