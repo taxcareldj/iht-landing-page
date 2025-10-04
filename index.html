@@ -6,7 +6,7 @@
   <title>Bimtek Perpajakan: Panduan Lengkap Lapor SPT Tahunan Coretax Tanpa Risiko Sanksi</title>
   <style>
     :root {
-      --accent:#d64545;
+      --accent:#2563eb;   /* biru utama */
       --bg:#f7f7fb;
       --card:#fff;
       --muted:#666;
@@ -45,7 +45,11 @@
       border:none;
       text-align:center;
       font-size:16px;
-      min-height:44px; /* agar mudah di-tap */
+      min-height:44px;
+      transition: background 0.3s ease;
+    }
+    .cta:hover{
+      background:#1e4ed8; /* biru lebih gelap saat hover */
     }
     .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
     .benefits ul{padding-left:18px;margin:8px 0}
@@ -56,7 +60,7 @@
     .small{font-size:13px;color:var(--muted)}
     footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
 
-    /* --- background blob abstrak --- */
+    /* --- background blob abstrak biru --- */
     body::before {
       content: "";
       position: fixed;
@@ -64,7 +68,7 @@
       left: -100px;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle at center, rgba(214,69,69,0.25) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(37,99,235,0.25) 0%, transparent 70%);
       border-radius: 50%;
       z-index: -1;
       filter: blur(80px);
@@ -76,7 +80,7 @@
       right: -100px;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle at center, rgba(100,149,237,0.25) 0%, transparent 70%);
+      background: radial-gradient(circle at center, rgba(59,130,246,0.25) 0%, transparent 70%);
       border-radius: 50%;
       z-index: -1;
       filter: blur(90px);
